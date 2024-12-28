@@ -1,34 +1,30 @@
 {
   "manifest_version": 3,
-
-  "name": "Chrome Extension TypeScript Starter",
-  "description": "Chrome Extension, TypeScript, Visual Studio Code",
+  "name": "ぶんまわし",
+  "description": "閲覧しているウェブサイトを簡単に逆さ読みできます。",
   "version": "1.0",
-
-  "options_ui": {
-    "page": "options.html"
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
   },
-
   "action": {
-    "default_icon": "icon.png",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "24": "icons/icon.png",
+      "32": "icons/icon.png"
+    },
     "default_popup": "popup.html"
   },
-
-  "content_scripts": [
-      {
-          "matches": ["<all_urls>"],
-          "js": ["js/vendor.js", "js/content_script.js"]
-      }
-  ],
-
   "background": {
     "service_worker": "js/background.js"
   },
-
   "permissions": [
-    "storage"
+    "activeTab",
+    "contextMenus",
+    "scripting"
   ],
-
   "host_permissions": [
     "<all_urls>"
   ]
